@@ -1,0 +1,12 @@
+infrastructureDefinition:
+  name: ielsdev-infra-def
+  identifier: ielsdevinfradef
+  environmentRef: ielsdev
+  deploymentType: Kubernetes
+  type: KubernetesGcp
+  spec:
+    connectorRef: account.ielsgkeconnector
+    cluster: iels-gke-cluster
+    namespace: dev
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
